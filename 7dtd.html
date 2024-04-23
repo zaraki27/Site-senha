@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Days to Die</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>7 Days to Die</h1>
+    </header>
+
+    <main>
+        <section id="content" style="display:none;">
+            <h2>Descrição</h2>
+            <p>
+                7 Days to Die é um jogo de sobrevivência em mundo aberto que combina elementos de tiro em primeira pessoa, terror e crafting. 
+                Situado em um mundo pós-apocalíptico infestado por zumbis, os jogadores devem explorar, construir abrigos, lutar contra hordas de zumbis e sobreviver.
+            </p>
+        </section>
+
+        <section id="passwordForm">
+            <h2>Por favor, insira a senha para acessar</h2>
+            <form onsubmit="checkPassword(); return false;">
+                <input type="password" id="passwordInput" required>
+                <button type="submit">Acessar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <a href="index.html">Voltar para a página inicial</a>
+    </footer>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordInput").value;
+            if (password === "7dtd") {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("passwordForm").style.display = "none";
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+                document.getElementById("passwordInput").value = ""; // Limpa o campo de senha
+            }
+        }
+    </script>
+</body>
+</html>
